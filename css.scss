@@ -1,0 +1,180 @@
+$dark-blue: #779ECB;
+$light-blue: #AEC6CF;
+$pink: 	#ffe0e5;
+$yellow: #fbffb5;
+$green: #d3ffce;
+$lightest-blue: #e0fffa;
+$dark: #666666;
+$purple: #cbabce;
+$light-green: #c2e6b9;
+$orange: #ffca95;
+$darker-orange: darken($orange, 20%);
+$lighter-dark: lighten($dark, 20%);
+
+$nGrids: 12;
+
+@for $i from 1 through $nGrids {
+  .grid-#{$i} {
+    width: 100% / 12 * $i;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .sections{
+    display: none;
+  }
+  .dropdown-content {
+    width: 100vw;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .menu {
+    display: none;
+  }
+  .sections {
+    position: absolute;
+    right: 85px;
+    left: 121.13px;
+  }
+  .account {
+    padding-left: 10px;
+    li {
+      // width: 85px;
+      padding: 0px;
+    }
+  }
+  .dropdown-content {
+    width: 35vw;
+  }
+}
+
+i.material-icons {
+  padding: 9px 0;
+  margin: 0;
+  width: 85px;
+  font-size: 72px;
+}
+
+nav {
+  height: 90px;
+  position: fixed;
+  width: 100%;
+  background: $light-blue;
+  display: inline-block;
+  ul::-webkit-scrollbar {
+  /* This is the magic bit */
+    display: none;
+  }
+  ul {
+    overflow: auto;
+    text-align: center;
+    float: left;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    li:hover {
+      background-color: $orange;
+    }
+    li {
+      position: relative;
+      display: inline-block;
+      a {
+        color: white;
+        p {
+          margin: 0;
+          padding: 25px 12px;
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+
+.feeds {
+  top: 90px;
+  left: 0;
+  height: 40px;
+  background: $light-green;
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  ul {
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    li:hover {
+      background-color: $orange;
+    }
+    li {
+      position: relative;
+      display: inline-block;
+      a {
+        color: white;
+        p {
+          margin: 0;
+          padding: 10.5px 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-content {
+  color: black;
+  background: $purple;
+  position: fixed;
+  font-size: 30px;
+  top: 90px;
+  z-index: 2;
+  display: none;
+  div:hover {
+    background-color: $orange;
+  }
+  div > a > p {
+    margin: 0;
+    padding: 0;
+
+  }
+}
+
+.current {
+  background-color: $pink;
+}
+
+.active {
+  display: block;
+}
+
+.content {
+  padding-top: 135px;
+}
+
+.article {
+  display:flex;
+  overflow-x: auto;
+  .aImage {
+  }
+  .aText {
+
+  }
+  .aScore {
+    width: 15vw;
+  }
+}
+
+a,p {
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  margin: 0px;
+  height: 100%;
+}
